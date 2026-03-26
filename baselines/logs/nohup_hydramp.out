@@ -1,0 +1,277 @@
+nohup: ignoring input
+/export/users/1173693/iDragonCloud/1/LightweightPeptideGen/baselines/hydramp/trainer.py:75: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self.scaler = GradScaler(enabled=use_amp)
+2026-02-27 20:59:58,485 INFO [HydrAMP] Starting training. Model params: 2,697,242
+[train_baseline] GPU: Quadro RTX 6000, VRAM: 25.2 GB
+
+[train_baseline] Model: HYDRAMP | Epochs: 200 | Batch: 256
+
+[data_utils] Loading train data from dataset/train.csv...
+Loaded 129121 sequences from dataset/train.csv
+Available features: ['instability_index', 'therapeutic_score', 'hemolytic_score', 'aliphatic_index', 'hydrophobic_moment', 'gravy', 'charge_at_pH7', 'aromaticity']
+Conditional dataset: 129121 sequences
+  Features: ['instability_index', 'therapeutic_score', 'hemolytic_score', 'aliphatic_index', 'hydrophobic_moment', 'gravy', 'charge_at_pH7', 'aromaticity']
+  Feature dim: 8
+[data_utils] Loading val data from dataset/val.csv...
+Loaded 27669 sequences from dataset/val.csv
+Available features: ['instability_index', 'therapeutic_score', 'hemolytic_score', 'aliphatic_index', 'hydrophobic_moment', 'gravy', 'charge_at_pH7', 'aromaticity']
+Conditional dataset: 27669 sequences
+  Features: ['instability_index', 'therapeutic_score', 'hemolytic_score', 'aliphatic_index', 'hydrophobic_moment', 'gravy', 'charge_at_pH7', 'aromaticity']
+  Feature dim: 8
+[data_utils] Train batches: 504, Val batches: 109
+
+============================================================
+  Training: HYDRAMP
+============================================================
+
+[HydrAMP] Parameters: 2,697,242
+/export/users/1173693/iDragonCloud/1/LightweightPeptideGen/baselines/hydramp/trainer.py:154: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=self.use_amp):
+2026-02-27 21:00:16,744 INFO [HydrAMP] Ep   1/200 | train_loss=3.6271 (18.3s)
+2026-02-27 21:00:34,473 INFO [HydrAMP] Ep   2/200 | train_loss=3.4370 (17.7s)
+2026-02-27 21:00:52,347 INFO [HydrAMP] Ep   3/200 | train_loss=3.3335 (17.9s)
+2026-02-27 21:01:10,178 INFO [HydrAMP] Ep   4/200 | train_loss=3.2629 (17.8s)
+/export/users/1173693/iDragonCloud/1/LightweightPeptideGen/baselines/hydramp/trainer.py:176: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=self.use_amp):
+2026-02-27 21:01:30,419 INFO [HydrAMP] Ep   5/200 | train_loss=3.2167 val_loss=3.1108 rec=2.6304 kl=0.0715 ent=2.827 ngram=0.0818 (17.8s)
+2026-02-27 21:01:30,992 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:01:48,854 INFO [HydrAMP] Ep   6/200 | train_loss=3.1805 (17.9s)
+2026-02-27 21:02:06,812 INFO [HydrAMP] Ep   7/200 | train_loss=3.1533 (18.0s)
+2026-02-27 21:02:24,753 INFO [HydrAMP] Ep   8/200 | train_loss=3.1273 (17.9s)
+2026-02-27 21:02:42,672 INFO [HydrAMP] Ep   9/200 | train_loss=3.1052 (17.9s)
+2026-02-27 21:03:02,904 INFO [HydrAMP] Ep  10/200 | train_loss=3.0881 val_loss=2.9752 rec=2.5280 kl=0.0854 ent=2.854 ngram=0.0878 (18.0s)
+2026-02-27 21:03:03,462 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:03:04,041 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/epoch_10.pt
+2026-02-27 21:03:22,088 INFO [HydrAMP] Ep  11/200 | train_loss=3.0705 (18.0s)
+2026-02-27 21:03:40,134 INFO [HydrAMP] Ep  12/200 | train_loss=3.0565 (18.0s)
+2026-02-27 21:03:59,513 INFO [HydrAMP] Ep  13/200 | train_loss=3.0433 (19.4s)
+2026-02-27 21:04:17,535 INFO [HydrAMP] Ep  14/200 | train_loss=3.0307 (18.0s)
+2026-02-27 21:04:37,675 INFO [HydrAMP] Ep  15/200 | train_loss=3.0188 val_loss=2.9109 rec=2.4748 kl=0.0902 ent=2.854 ngram=0.0921 (17.9s)
+2026-02-27 21:04:38,238 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:05:00,124 INFO [HydrAMP] Ep  16/200 | train_loss=3.0033 (21.9s)
+2026-02-27 21:05:18,109 INFO [HydrAMP] Ep  17/200 | train_loss=2.9892 (18.0s)
+2026-02-27 21:05:36,124 INFO [HydrAMP] Ep  18/200 | train_loss=2.9730 (18.0s)
+2026-02-27 21:05:57,272 INFO [HydrAMP] Ep  19/200 | train_loss=2.9622 (21.1s)
+2026-02-27 21:06:17,612 INFO [HydrAMP] Ep  20/200 | train_loss=2.9520 val_loss=2.8457 rec=2.4203 kl=0.0952 ent=2.857 ngram=0.0850 (18.2s)
+2026-02-27 21:06:18,153 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:06:18,722 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/epoch_20.pt
+2026-02-27 21:06:36,845 INFO [HydrAMP] Ep  21/200 | train_loss=2.9426 (18.1s)
+2026-02-27 21:06:54,901 INFO [HydrAMP] Ep  22/200 | train_loss=2.9358 (18.1s)
+2026-02-27 21:07:18,786 INFO [HydrAMP] Ep  23/200 | train_loss=2.9266 (23.9s)
+2026-02-27 21:07:37,098 INFO [HydrAMP] Ep  24/200 | train_loss=2.9189 (18.3s)
+2026-02-27 21:07:57,691 INFO [HydrAMP] Ep  25/200 | train_loss=2.9118 val_loss=2.7845 rec=2.3737 kl=0.0996 ent=2.849 ngram=0.0879 (18.4s)
+2026-02-27 21:08:02,972 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:08:21,391 INFO [HydrAMP] Ep  26/200 | train_loss=2.9057 (18.4s)
+2026-02-27 21:08:39,704 INFO [HydrAMP] Ep  27/200 | train_loss=2.9005 (18.3s)
+2026-02-27 21:09:00,523 INFO [HydrAMP] Ep  28/200 | train_loss=2.8936 (20.8s)
+2026-02-27 21:09:18,803 INFO [HydrAMP] Ep  29/200 | train_loss=2.8867 (18.3s)
+2026-02-27 21:09:39,410 INFO [HydrAMP] Ep  30/200 | train_loss=2.8800 val_loss=2.7613 rec=2.3475 kl=0.1039 ent=2.854 ngram=0.0853 (18.4s)
+2026-02-27 21:09:39,945 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:09:40,507 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/epoch_30.pt
+2026-02-27 21:09:58,761 INFO [HydrAMP] Ep  31/200 | train_loss=2.8741 (18.2s)
+2026-02-27 21:10:16,845 INFO [HydrAMP] Ep  32/200 | train_loss=2.8690 (18.1s)
+2026-02-27 21:10:34,965 INFO [HydrAMP] Ep  33/200 | train_loss=2.8639 (18.1s)
+2026-02-27 21:10:53,102 INFO [HydrAMP] Ep  34/200 | train_loss=2.8585 (18.1s)
+2026-02-27 21:11:13,506 INFO [HydrAMP] Ep  35/200 | train_loss=2.8531 val_loss=2.7368 rec=2.3193 kl=0.1073 ent=2.848 ngram=0.0855 (18.2s)
+2026-02-27 21:11:14,052 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:11:32,345 INFO [HydrAMP] Ep  36/200 | train_loss=2.8486 (18.3s)
+2026-02-27 21:11:50,521 INFO [HydrAMP] Ep  37/200 | train_loss=2.8434 (18.2s)
+2026-02-27 21:12:08,739 INFO [HydrAMP] Ep  38/200 | train_loss=2.8388 (18.2s)
+2026-02-27 21:12:27,086 INFO [HydrAMP] Ep  39/200 | train_loss=2.8340 (18.3s)
+2026-02-27 21:12:47,837 INFO [HydrAMP] Ep  40/200 | train_loss=2.8297 val_loss=2.7213 rec=2.3095 kl=0.1091 ent=2.867 ngram=0.0885 (18.4s)
+2026-02-27 21:12:48,373 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:12:48,917 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/epoch_40.pt
+2026-02-27 21:13:07,282 INFO [HydrAMP] Ep  41/200 | train_loss=2.8250 (18.4s)
+2026-02-27 21:13:25,478 INFO [HydrAMP] Ep  42/200 | train_loss=2.8193 (18.2s)
+2026-02-27 21:13:44,130 INFO [HydrAMP] Ep  43/200 | train_loss=2.8143 (18.7s)
+2026-02-27 21:14:02,762 INFO [HydrAMP] Ep  44/200 | train_loss=2.8099 (18.6s)
+2026-02-27 21:14:23,630 INFO [HydrAMP] Ep  45/200 | train_loss=2.8045 val_loss=2.6767 rec=2.2639 kl=0.1110 ent=2.863 ngram=0.0847 (18.6s)
+2026-02-27 21:14:24,337 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:14:42,708 INFO [HydrAMP] Ep  46/200 | train_loss=2.8014 (18.4s)
+2026-02-27 21:15:01,029 INFO [HydrAMP] Ep  47/200 | train_loss=2.7957 (18.3s)
+2026-02-27 21:15:19,532 INFO [HydrAMP] Ep  48/200 | train_loss=2.7920 (18.5s)
+2026-02-27 21:15:37,922 INFO [HydrAMP] Ep  49/200 | train_loss=2.7864 (18.4s)
+2026-02-27 21:15:58,448 INFO [HydrAMP] Ep  50/200 | train_loss=2.7824 val_loss=2.6445 rec=2.2361 kl=0.1151 ent=2.864 ngram=0.0897 (18.3s)
+2026-02-27 21:15:59,006 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:15:59,592 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/epoch_50.pt
+2026-02-27 21:16:18,258 INFO [HydrAMP] Ep  51/200 | train_loss=2.7783 (18.7s)
+2026-02-27 21:16:36,919 INFO [HydrAMP] Ep  52/200 | train_loss=2.7712 (18.7s)
+2026-02-27 21:16:55,379 INFO [HydrAMP] Ep  53/200 | train_loss=2.7683 (18.5s)
+2026-02-27 21:17:13,876 INFO [HydrAMP] Ep  54/200 | train_loss=2.7641 (18.5s)
+2026-02-27 21:17:35,286 INFO [HydrAMP] Ep  55/200 | train_loss=2.7592 val_loss=2.6346 rec=2.2189 kl=0.1169 ent=2.880 ngram=0.0857 (19.2s)
+2026-02-27 21:17:35,852 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:17:54,144 INFO [HydrAMP] Ep  56/200 | train_loss=2.7546 (18.3s)
+2026-02-27 21:18:12,564 INFO [HydrAMP] Ep  57/200 | train_loss=2.7509 (18.4s)
+2026-02-27 21:18:32,942 INFO [HydrAMP] Ep  58/200 | train_loss=2.7463 (20.4s)
+2026-02-27 21:18:51,348 INFO [HydrAMP] Ep  59/200 | train_loss=2.7411 (18.4s)
+2026-02-27 21:19:11,654 INFO [HydrAMP] Ep  60/200 | train_loss=2.7386 val_loss=2.6048 rec=2.1846 kl=0.1219 ent=2.868 ngram=0.0835 (18.1s)
+2026-02-27 21:19:12,246 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:19:16,029 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/epoch_60.pt
+2026-02-27 21:19:34,518 INFO [HydrAMP] Ep  61/200 | train_loss=2.7350 (18.5s)
+2026-02-27 21:19:53,026 INFO [HydrAMP] Ep  62/200 | train_loss=2.7299 (18.5s)
+2026-02-27 21:20:11,491 INFO [HydrAMP] Ep  63/200 | train_loss=2.7256 (18.5s)
+2026-02-27 21:20:29,765 INFO [HydrAMP] Ep  64/200 | train_loss=2.7223 (18.3s)
+2026-02-27 21:20:50,492 INFO [HydrAMP] Ep  65/200 | train_loss=2.7187 val_loss=2.5774 rec=2.1625 kl=0.1258 ent=2.867 ngram=0.0865 (18.5s)
+2026-02-27 21:20:51,023 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:21:09,415 INFO [HydrAMP] Ep  66/200 | train_loss=2.7162 (18.4s)
+2026-02-27 21:21:27,841 INFO [HydrAMP] Ep  67/200 | train_loss=2.7115 (18.4s)
+2026-02-27 21:21:46,117 INFO [HydrAMP] Ep  68/200 | train_loss=2.7083 (18.3s)
+2026-02-27 21:22:04,265 INFO [HydrAMP] Ep  69/200 | train_loss=2.7047 (18.1s)
+2026-02-27 21:22:24,717 INFO [HydrAMP] Ep  70/200 | train_loss=2.7007 val_loss=2.5508 rec=2.1318 kl=0.1305 ent=2.881 ngram=0.0880 (18.2s)
+2026-02-27 21:22:25,310 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:22:25,979 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/epoch_70.pt
+2026-02-27 21:22:44,359 INFO [HydrAMP] Ep  71/200 | train_loss=2.6982 (18.4s)
+2026-02-27 21:23:02,744 INFO [HydrAMP] Ep  72/200 | train_loss=2.6958 (18.4s)
+2026-02-27 21:23:21,168 INFO [HydrAMP] Ep  73/200 | train_loss=2.6908 (18.4s)
+2026-02-27 21:23:39,455 INFO [HydrAMP] Ep  74/200 | train_loss=2.6902 (18.3s)
+2026-02-27 21:24:00,078 INFO [HydrAMP] Ep  75/200 | train_loss=2.6848 val_loss=2.5535 rec=2.1296 kl=0.1356 ent=2.881 ngram=0.0900 (18.4s)
+2026-02-27 21:24:18,520 INFO [HydrAMP] Ep  76/200 | train_loss=2.6850 (18.4s)
+2026-02-27 21:24:36,746 INFO [HydrAMP] Ep  77/200 | train_loss=2.6802 (18.2s)
+2026-02-27 21:24:55,040 INFO [HydrAMP] Ep  78/200 | train_loss=2.6779 (18.3s)
+2026-02-27 21:25:13,412 INFO [HydrAMP] Ep  79/200 | train_loss=2.6747 (18.4s)
+2026-02-27 21:25:34,247 INFO [HydrAMP] Ep  80/200 | train_loss=2.6718 val_loss=2.5124 rec=2.0863 kl=0.1390 ent=2.862 ngram=0.0820 (18.6s)
+2026-02-27 21:25:35,140 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:25:35,707 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/epoch_80.pt
+2026-02-27 21:25:54,144 INFO [HydrAMP] Ep  81/200 | train_loss=2.6701 (18.4s)
+2026-02-27 21:26:12,433 INFO [HydrAMP] Ep  82/200 | train_loss=2.6682 (18.3s)
+2026-02-27 21:26:30,897 INFO [HydrAMP] Ep  83/200 | train_loss=2.6645 (18.5s)
+2026-02-27 21:26:49,318 INFO [HydrAMP] Ep  84/200 | train_loss=2.6639 (18.4s)
+2026-02-27 21:27:09,883 INFO [HydrAMP] Ep  85/200 | train_loss=2.6592 val_loss=2.5414 rec=2.0691 kl=0.1428 ent=2.879 ngram=0.0888 (18.3s)
+2026-02-27 21:27:27,978 INFO [HydrAMP] Ep  86/200 | train_loss=2.6591 (18.1s)
+2026-02-27 21:27:46,234 INFO [HydrAMP] Ep  87/200 | train_loss=2.6559 (18.3s)
+2026-02-27 21:28:04,542 INFO [HydrAMP] Ep  88/200 | train_loss=2.6527 (18.3s)
+2026-02-27 21:28:22,863 INFO [HydrAMP] Ep  89/200 | train_loss=2.6528 (18.3s)
+2026-02-27 21:28:43,809 INFO [HydrAMP] Ep  90/200 | train_loss=2.6501 val_loss=2.4777 rec=2.0532 kl=0.1454 ent=2.874 ngram=0.0826 (18.7s)
+2026-02-27 21:28:45,170 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:28:45,764 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/epoch_90.pt
+2026-02-27 21:29:04,355 INFO [HydrAMP] Ep  91/200 | train_loss=2.6485 (18.6s)
+2026-02-27 21:29:22,942 INFO [HydrAMP] Ep  92/200 | train_loss=2.6451 (18.6s)
+2026-02-27 21:29:41,360 INFO [HydrAMP] Ep  93/200 | train_loss=2.6451 (18.4s)
+2026-02-27 21:30:00,017 INFO [HydrAMP] Ep  94/200 | train_loss=2.6459 (18.7s)
+2026-02-27 21:30:20,862 INFO [HydrAMP] Ep  95/200 | train_loss=2.6430 val_loss=2.4714 rec=2.0410 kl=0.1483 ent=2.862 ngram=0.0870 (18.6s)
+2026-02-27 21:30:21,499 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:30:39,898 INFO [HydrAMP] Ep  96/200 | train_loss=2.6406 (18.4s)
+2026-02-27 21:30:58,202 INFO [HydrAMP] Ep  97/200 | train_loss=2.6403 (18.3s)
+2026-02-27 21:31:16,633 INFO [HydrAMP] Ep  98/200 | train_loss=2.6373 (18.4s)
+2026-02-27 21:31:35,127 INFO [HydrAMP] Ep  99/200 | train_loss=2.6379 (18.5s)
+2026-02-27 21:31:55,845 INFO [HydrAMP] Ep 100/200 | train_loss=2.6359 val_loss=2.4729 rec=2.0367 kl=0.1497 ent=2.869 ngram=0.0831 (18.5s)
+2026-02-27 21:31:56,465 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/epoch_100.pt
+2026-02-27 21:32:14,707 INFO [HydrAMP] Ep 101/200 | train_loss=2.6334 (18.2s)
+2026-02-27 21:32:32,743 INFO [HydrAMP] Ep 102/200 | train_loss=2.6327 (18.0s)
+2026-02-27 21:32:51,024 INFO [HydrAMP] Ep 103/200 | train_loss=2.6305 (18.3s)
+2026-02-27 21:33:09,217 INFO [HydrAMP] Ep 104/200 | train_loss=2.6293 (18.2s)
+2026-02-27 21:33:30,024 INFO [HydrAMP] Ep 105/200 | train_loss=2.6283 val_loss=2.4663 rec=2.0197 kl=0.1544 ent=2.873 ngram=0.0826 (18.6s)
+2026-02-27 21:33:30,600 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:33:47,908 INFO [HydrAMP] Ep 106/200 | train_loss=2.6282 (17.3s)
+2026-02-27 21:34:06,376 INFO [HydrAMP] Ep 107/200 | train_loss=2.6257 (18.5s)
+2026-02-27 21:34:24,967 INFO [HydrAMP] Ep 108/200 | train_loss=2.6245 (18.6s)
+2026-02-27 21:34:43,471 INFO [HydrAMP] Ep 109/200 | train_loss=2.6221 (18.5s)
+2026-02-27 21:35:04,279 INFO [HydrAMP] Ep 110/200 | train_loss=2.6214 val_loss=2.4921 rec=2.0016 kl=0.1563 ent=2.874 ngram=0.0857 (18.6s)
+2026-02-27 21:35:04,833 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/epoch_110.pt
+2026-02-27 21:35:23,199 INFO [HydrAMP] Ep 111/200 | train_loss=2.6199 (18.4s)
+2026-02-27 21:35:41,563 INFO [HydrAMP] Ep 112/200 | train_loss=2.6183 (18.4s)
+2026-02-27 21:35:59,967 INFO [HydrAMP] Ep 113/200 | train_loss=2.6180 (18.4s)
+2026-02-27 21:36:18,335 INFO [HydrAMP] Ep 114/200 | train_loss=2.6175 (18.4s)
+2026-02-27 21:36:40,065 INFO [HydrAMP] Ep 115/200 | train_loss=2.6161 val_loss=2.4479 rec=1.9906 kl=0.1589 ent=2.884 ngram=0.0790 (19.5s)
+2026-02-27 21:36:40,907 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:36:59,480 INFO [HydrAMP] Ep 116/200 | train_loss=2.6145 (18.6s)
+2026-02-27 21:37:17,922 INFO [HydrAMP] Ep 117/200 | train_loss=2.6119 (18.4s)
+2026-02-27 21:37:36,461 INFO [HydrAMP] Ep 118/200 | train_loss=2.6111 (18.5s)
+2026-02-27 21:37:54,869 INFO [HydrAMP] Ep 119/200 | train_loss=2.6100 (18.4s)
+2026-02-27 21:38:15,445 INFO [HydrAMP] Ep 120/200 | train_loss=2.6073 val_loss=2.4393 rec=1.9778 kl=0.1610 ent=2.882 ngram=0.0811 (18.3s)
+2026-02-27 21:38:15,976 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:38:16,569 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/epoch_120.pt
+2026-02-27 21:38:35,055 INFO [HydrAMP] Ep 121/200 | train_loss=2.6052 (18.5s)
+2026-02-27 21:38:53,480 INFO [HydrAMP] Ep 122/200 | train_loss=2.6060 (18.4s)
+2026-02-27 21:39:11,922 INFO [HydrAMP] Ep 123/200 | train_loss=2.6066 (18.4s)
+2026-02-27 21:39:30,388 INFO [HydrAMP] Ep 124/200 | train_loss=2.6055 (18.5s)
+2026-02-27 21:39:51,193 INFO [HydrAMP] Ep 125/200 | train_loss=2.6051 val_loss=2.4450 rec=1.9661 kl=0.1639 ent=2.878 ngram=0.0841 (18.6s)
+2026-02-27 21:40:09,969 INFO [HydrAMP] Ep 126/200 | train_loss=2.6035 (18.8s)
+2026-02-27 21:40:28,397 INFO [HydrAMP] Ep 127/200 | train_loss=2.6037 (18.4s)
+2026-02-27 21:40:46,971 INFO [HydrAMP] Ep 128/200 | train_loss=2.6017 (18.6s)
+2026-02-27 21:41:05,394 INFO [HydrAMP] Ep 129/200 | train_loss=2.6017 (18.4s)
+2026-02-27 21:41:26,081 INFO [HydrAMP] Ep 130/200 | train_loss=2.6010 val_loss=2.4506 rec=1.9538 kl=0.1664 ent=2.866 ngram=0.0832 (18.5s)
+2026-02-27 21:41:26,709 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/epoch_130.pt
+2026-02-27 21:41:45,125 INFO [HydrAMP] Ep 131/200 | train_loss=2.5990 (18.4s)
+2026-02-27 21:42:03,540 INFO [HydrAMP] Ep 132/200 | train_loss=2.6004 (18.4s)
+2026-02-27 21:42:21,985 INFO [HydrAMP] Ep 133/200 | train_loss=2.5991 (18.4s)
+2026-02-27 21:42:40,661 INFO [HydrAMP] Ep 134/200 | train_loss=2.5997 (18.7s)
+2026-02-27 21:43:01,442 INFO [HydrAMP] Ep 135/200 | train_loss=2.5976 val_loss=2.4100 rec=1.9538 kl=0.1675 ent=2.887 ngram=0.0831 (18.6s)
+2026-02-27 21:43:01,968 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:43:20,338 INFO [HydrAMP] Ep 136/200 | train_loss=2.5972 (18.4s)
+2026-02-27 21:43:38,680 INFO [HydrAMP] Ep 137/200 | train_loss=2.5971 (18.3s)
+2026-02-27 21:43:57,059 INFO [HydrAMP] Ep 138/200 | train_loss=2.5990 (18.4s)
+2026-02-27 21:44:15,553 INFO [HydrAMP] Ep 139/200 | train_loss=2.5981 (18.5s)
+2026-02-27 21:44:36,023 INFO [HydrAMP] Ep 140/200 | train_loss=2.5978 val_loss=2.4046 rec=1.9491 kl=0.1690 ent=2.871 ngram=0.0820 (18.2s)
+2026-02-27 21:44:36,753 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:44:37,304 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/epoch_140.pt
+2026-02-27 21:44:55,709 INFO [HydrAMP] Ep 141/200 | train_loss=2.5971 (18.4s)
+2026-02-27 21:45:14,476 INFO [HydrAMP] Ep 142/200 | train_loss=2.5962 (18.8s)
+2026-02-27 21:45:33,089 INFO [HydrAMP] Ep 143/200 | train_loss=2.5972 (18.6s)
+2026-02-27 21:45:51,758 INFO [HydrAMP] Ep 144/200 | train_loss=2.5961 (18.7s)
+2026-02-27 21:46:12,901 INFO [HydrAMP] Ep 145/200 | train_loss=2.5980 val_loss=2.4075 rec=1.9408 kl=0.1697 ent=2.871 ngram=0.0824 (18.9s)
+2026-02-27 21:46:31,745 INFO [HydrAMP] Ep 146/200 | train_loss=2.5986 (18.8s)
+2026-02-27 21:46:50,585 INFO [HydrAMP] Ep 147/200 | train_loss=2.5992 (18.8s)
+2026-02-27 21:47:09,457 INFO [HydrAMP] Ep 148/200 | train_loss=2.5981 (18.9s)
+2026-02-27 21:47:28,342 INFO [HydrAMP] Ep 149/200 | train_loss=2.5999 (18.9s)
+2026-02-27 21:47:49,339 INFO [HydrAMP] Ep 150/200 | train_loss=2.5985 val_loss=2.3968 rec=1.9339 kl=0.1712 ent=2.864 ngram=0.0815 (18.8s)
+2026-02-27 21:47:49,976 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/best.pt
+2026-02-27 21:47:50,534 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/epoch_150.pt
+2026-02-27 21:48:09,057 INFO [HydrAMP] Ep 151/200 | train_loss=2.6007 (18.5s)
+2026-02-27 21:48:27,760 INFO [HydrAMP] Ep 152/200 | train_loss=2.6007 (18.7s)
+2026-02-27 21:48:46,332 INFO [HydrAMP] Ep 153/200 | train_loss=2.5992 (18.6s)
+2026-02-27 21:49:05,108 INFO [HydrAMP] Ep 154/200 | train_loss=2.6006 (18.8s)
+2026-02-27 21:49:26,028 INFO [HydrAMP] Ep 155/200 | train_loss=2.6000 val_loss=2.4003 rec=1.9342 kl=0.1719 ent=2.875 ngram=0.0816 (18.7s)
+2026-02-27 21:49:44,539 INFO [HydrAMP] Ep 156/200 | train_loss=2.5991 (18.5s)
+2026-02-27 21:50:03,353 INFO [HydrAMP] Ep 157/200 | train_loss=2.5995 (18.8s)
+2026-02-27 21:50:21,863 INFO [HydrAMP] Ep 158/200 | train_loss=2.6016 (18.5s)
+2026-02-27 21:50:40,448 INFO [HydrAMP] Ep 159/200 | train_loss=2.6022 (18.6s)
+2026-02-27 21:51:01,335 INFO [HydrAMP] Ep 160/200 | train_loss=2.6025 val_loss=2.4235 rec=1.9334 kl=0.1725 ent=2.876 ngram=0.0830 (18.7s)
+2026-02-27 21:51:01,901 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/epoch_160.pt
+2026-02-27 21:51:20,239 INFO [HydrAMP] Ep 161/200 | train_loss=2.6052 (18.3s)
+2026-02-27 21:51:38,814 INFO [HydrAMP] Ep 162/200 | train_loss=2.6076 (18.6s)
+2026-02-27 21:51:57,764 INFO [HydrAMP] Ep 163/200 | train_loss=2.6045 (18.9s)
+2026-02-27 21:52:16,494 INFO [HydrAMP] Ep 164/200 | train_loss=2.6073 (18.7s)
+2026-02-27 21:52:37,253 INFO [HydrAMP] Ep 165/200 | train_loss=2.6075 val_loss=2.4123 rec=1.9340 kl=0.1734 ent=2.870 ngram=0.0820 (18.6s)
+2026-02-27 21:52:55,865 INFO [HydrAMP] Ep 166/200 | train_loss=2.6100 (18.6s)
+2026-02-27 21:53:14,707 INFO [HydrAMP] Ep 167/200 | train_loss=2.6096 (18.8s)
+2026-02-27 21:53:33,206 INFO [HydrAMP] Ep 168/200 | train_loss=2.6088 (18.5s)
+2026-02-27 21:53:51,696 INFO [HydrAMP] Ep 169/200 | train_loss=2.6106 (18.5s)
+2026-02-27 21:54:12,391 INFO [HydrAMP] Ep 170/200 | train_loss=2.6114 val_loss=2.4122 rec=1.9363 kl=0.1738 ent=2.891 ngram=0.0819 (18.5s)
+2026-02-27 21:54:12,928 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/epoch_170.pt
+2026-02-27 21:54:31,291 INFO [HydrAMP] Ep 171/200 | train_loss=2.6105 (18.4s)
+2026-02-27 21:54:49,734 INFO [HydrAMP] Ep 172/200 | train_loss=2.6091 (18.4s)
+2026-02-27 21:55:08,056 INFO [HydrAMP] Ep 173/200 | train_loss=2.6134 (18.3s)
+2026-02-27 21:55:26,456 INFO [HydrAMP] Ep 174/200 | train_loss=2.6121 (18.4s)
+2026-02-27 21:55:47,187 INFO [HydrAMP] Ep 175/200 | train_loss=2.6156 val_loss=2.4498 rec=1.9663 kl=0.1755 ent=2.874 ngram=0.0829 (18.5s)
+2026-02-27 21:56:05,552 INFO [HydrAMP] Ep 176/200 | train_loss=2.6135 (18.4s)
+2026-02-27 21:56:23,971 INFO [HydrAMP] Ep 177/200 | train_loss=2.6156 (18.4s)
+2026-02-27 21:56:42,325 INFO [HydrAMP] Ep 178/200 | train_loss=2.6116 (18.4s)
+2026-02-27 21:57:00,646 INFO [HydrAMP] Ep 179/200 | train_loss=2.6160 (18.3s)
+2026-02-27 21:57:21,399 INFO [HydrAMP] Ep 180/200 | train_loss=2.6153 val_loss=2.4082 rec=1.9305 kl=0.1770 ent=2.881 ngram=0.0795 (18.5s)
+2026-02-27 21:57:21,981 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/epoch_180.pt
+2026-02-27 21:57:40,403 INFO [HydrAMP] Ep 181/200 | train_loss=2.6179 (18.4s)
+2026-02-27 21:57:58,818 INFO [HydrAMP] Ep 182/200 | train_loss=2.6179 (18.4s)
+2026-02-27 21:58:17,155 INFO [HydrAMP] Ep 183/200 | train_loss=2.6218 (18.3s)
+2026-02-27 21:58:35,585 INFO [HydrAMP] Ep 184/200 | train_loss=2.6210 (18.4s)
+2026-02-27 21:58:56,334 INFO [HydrAMP] Ep 185/200 | train_loss=2.6231 val_loss=2.5091 rec=1.9750 kl=0.1781 ent=2.870 ngram=0.0806 (18.6s)
+2026-02-27 21:59:14,874 INFO [HydrAMP] Ep 186/200 | train_loss=2.6243 (18.5s)
+2026-02-27 21:59:33,189 INFO [HydrAMP] Ep 187/200 | train_loss=2.6263 (18.3s)
+2026-02-27 21:59:51,552 INFO [HydrAMP] Ep 188/200 | train_loss=2.6279 (18.4s)
+2026-02-27 22:00:10,068 INFO [HydrAMP] Ep 189/200 | train_loss=2.6263 (18.5s)
+2026-02-27 22:00:30,785 INFO [HydrAMP] Ep 190/200 | train_loss=2.6318 val_loss=2.4320 rec=1.9455 kl=0.1772 ent=2.885 ngram=0.0788 (18.5s)
+2026-02-27 22:00:31,360 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/epoch_190.pt
+2026-02-27 22:00:49,865 INFO [HydrAMP] Ep 191/200 | train_loss=2.6331 (18.5s)
+2026-02-27 22:01:08,226 INFO [HydrAMP] Ep 192/200 | train_loss=2.6319 (18.4s)
+2026-02-27 22:01:26,563 INFO [HydrAMP] Ep 193/200 | train_loss=2.6335 (18.3s)
+2026-02-27 22:01:44,933 INFO [HydrAMP] Ep 194/200 | train_loss=2.6426 (18.4s)
+2026-02-27 22:02:05,555 INFO [HydrAMP] Ep 195/200 | train_loss=2.6434 val_loss=2.4376 rec=1.9494 kl=0.1762 ent=2.882 ngram=0.0774 (18.4s)
+2026-02-27 22:02:24,051 INFO [HydrAMP] Ep 196/200 | train_loss=2.6414 (18.5s)
+2026-02-27 22:02:42,549 INFO [HydrAMP] Ep 197/200 | train_loss=2.6421 (18.5s)
+2026-02-27 22:03:01,003 INFO [HydrAMP] Ep 198/200 | train_loss=2.6433 (18.5s)
+2026-02-27 22:03:19,613 INFO [HydrAMP] Ep 199/200 | train_loss=2.6459 (18.6s)
+2026-02-27 22:03:40,257 INFO [HydrAMP] Ep 200/200 | train_loss=2.6507 val_loss=2.4585 rec=1.9597 kl=0.1754 ent=2.880 ngram=0.0769 (18.4s)
+2026-02-27 22:03:40,826 INFO [HydrAMP] Saved checkpoint: baselines/checkpoints/hydramp/epoch_200.pt
+2026-02-27 22:03:40,884 INFO [HydrAMP] Training complete.
+
+[train_baseline] Done!

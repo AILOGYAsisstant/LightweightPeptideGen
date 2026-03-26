@@ -1,0 +1,19 @@
+{
+  "num_generated": 1000000,
+  "num_valid": 999999,
+  "validity_ratio": 0.999999,
+  "entropy": 2.89426268549597,
+  "ngram_diversity_2": 1.7372825703999016e-05,
+  "ngram_diversity_3": 0.00036323243266067986,
+  "uniqueness_ratio": 1.0,
+  "mean_length": 24.024487024487023,
+  "std_length": 9.92017559300818,
+  "min_length": 5,
+  "max_length": 52,
+  "length_in_range_ratio": 0.7122697122697123,
+  "mean_instability_index": 37.075918621700175,
+  "stable_ratio": 0.5763,
+  "mean_gravy": -0.22797760664393035,
+  "mean_amp_probability": 0.8270605999999999,
+  "probable_amp_ratio": 0.8596
+}

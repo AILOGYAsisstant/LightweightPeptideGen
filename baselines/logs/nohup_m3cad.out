@@ -1,0 +1,164 @@
+nohup: ignoring input
+/export/users/1173693/iDragonCloud/1/LightweightPeptideGen/baselines/m3cad/trainer.py:68: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self.scaler = GradScaler(enabled=use_amp)
+2026-02-27 18:30:18,625 INFO [M3-CAD] Training. Params: 2,733,052
+[train_baseline] GPU: Quadro RTX 6000, VRAM: 25.2 GB
+
+[train_baseline] Model: M3CAD | Epochs: 100 | Batch: 256
+
+[data_utils] Loading train data from dataset/train.csv...
+Loaded 129121 sequences from dataset/train.csv
+Available features: ['instability_index', 'therapeutic_score', 'hemolytic_score', 'aliphatic_index', 'hydrophobic_moment', 'gravy', 'charge_at_pH7', 'aromaticity']
+Conditional dataset: 129121 sequences
+  Features: ['instability_index', 'therapeutic_score', 'hemolytic_score', 'aliphatic_index', 'hydrophobic_moment', 'gravy', 'charge_at_pH7', 'aromaticity']
+  Feature dim: 8
+[data_utils] Loading val data from dataset/val.csv...
+Loaded 27669 sequences from dataset/val.csv
+Available features: ['instability_index', 'therapeutic_score', 'hemolytic_score', 'aliphatic_index', 'hydrophobic_moment', 'gravy', 'charge_at_pH7', 'aromaticity']
+Conditional dataset: 27669 sequences
+  Features: ['instability_index', 'therapeutic_score', 'hemolytic_score', 'aliphatic_index', 'hydrophobic_moment', 'gravy', 'charge_at_pH7', 'aromaticity']
+  Feature dim: 8
+[data_utils] Train batches: 504, Val batches: 109
+
+============================================================
+  Training: M3CAD
+============================================================
+
+[M3-CAD] Parameters: 2,733,052
+/export/users/1173693/iDragonCloud/1/LightweightPeptideGen/baselines/m3cad/trainer.py:136: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=self.use_amp):
+2026-02-27 18:30:30,854 INFO [M3-CAD] Ep   1/100 | train=3.2041 (12.2s)
+2026-02-27 18:30:41,495 INFO [M3-CAD] Ep   2/100 | train=3.0438 (10.6s)
+2026-02-27 18:30:52,003 INFO [M3-CAD] Ep   3/100 | train=2.9515 (10.5s)
+2026-02-27 18:31:02,504 INFO [M3-CAD] Ep   4/100 | train=2.8803 (10.5s)
+/export/users/1173693/iDragonCloud/1/LightweightPeptideGen/baselines/m3cad/trainer.py:154: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast(enabled=self.use_amp):
+2026-02-27 18:31:14,645 INFO [M3-CAD] Ep   5/100 | train=2.8289 val=2.7286 rec=2.5948 kl=0.0558 ent=2.812 ngram=0.0821 (10.5s)
+2026-02-27 18:31:14,890 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/best.pt
+2026-02-27 18:31:25,458 INFO [M3-CAD] Ep   6/100 | train=2.7893 (10.6s)
+2026-02-27 18:31:35,965 INFO [M3-CAD] Ep   7/100 | train=2.7593 (10.5s)
+2026-02-27 18:31:46,476 INFO [M3-CAD] Ep   8/100 | train=2.7364 (10.5s)
+2026-02-27 18:31:57,026 INFO [M3-CAD] Ep   9/100 | train=2.7162 (10.5s)
+2026-02-27 18:32:09,394 INFO [M3-CAD] Ep  10/100 | train=2.6971 val=2.5593 rec=2.4039 kl=0.0883 ent=2.843 ngram=0.0897 (11.0s)
+2026-02-27 18:32:09,636 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/best.pt
+2026-02-27 18:32:09,886 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/epoch_10.pt
+2026-02-27 18:32:23,528 INFO [M3-CAD] Ep  11/100 | train=2.6795 (13.6s)
+2026-02-27 18:32:36,835 INFO [M3-CAD] Ep  12/100 | train=2.6593 (13.3s)
+2026-02-27 18:32:50,356 INFO [M3-CAD] Ep  13/100 | train=2.6384 (13.5s)
+2026-02-27 18:33:03,879 INFO [M3-CAD] Ep  14/100 | train=2.6211 (13.5s)
+2026-02-27 18:33:24,417 INFO [M3-CAD] Ep  15/100 | train=2.6054 val=2.4406 rec=2.2571 kl=0.1207 ent=2.850 ngram=0.0908 (13.7s)
+2026-02-27 18:33:24,837 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/best.pt
+2026-02-27 18:33:46,044 INFO [M3-CAD] Ep  16/100 | train=2.5912 (21.2s)
+2026-02-27 18:34:01,693 INFO [M3-CAD] Ep  17/100 | train=2.5780 (15.6s)
+2026-02-27 18:34:15,349 INFO [M3-CAD] Ep  18/100 | train=2.5655 (13.7s)
+2026-02-27 18:34:28,704 INFO [M3-CAD] Ep  19/100 | train=2.5541 (13.4s)
+2026-02-27 18:34:43,606 INFO [M3-CAD] Ep  20/100 | train=2.5436 val=2.3688 rec=2.1657 kl=0.1420 ent=2.867 ngram=0.0887 (13.3s)
+2026-02-27 18:34:43,820 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/best.pt
+2026-02-27 18:34:44,053 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/epoch_20.pt
+2026-02-27 18:34:57,345 INFO [M3-CAD] Ep  21/100 | train=2.5331 (13.3s)
+2026-02-27 18:35:10,516 INFO [M3-CAD] Ep  22/100 | train=2.5230 (13.2s)
+2026-02-27 18:35:23,553 INFO [M3-CAD] Ep  23/100 | train=2.5108 (13.0s)
+2026-02-27 18:35:36,749 INFO [M3-CAD] Ep  24/100 | train=2.4992 (13.2s)
+2026-02-27 18:35:51,596 INFO [M3-CAD] Ep  25/100 | train=2.4864 val=2.3081 rec=2.0847 kl=0.1636 ent=2.869 ngram=0.0873 (13.3s)
+2026-02-27 18:35:51,819 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/best.pt
+2026-02-27 18:36:05,064 INFO [M3-CAD] Ep  26/100 | train=2.4736 (13.2s)
+2026-02-27 18:36:18,277 INFO [M3-CAD] Ep  27/100 | train=2.4641 (13.2s)
+2026-02-27 18:36:31,331 INFO [M3-CAD] Ep  28/100 | train=2.4531 (13.1s)
+2026-02-27 18:36:44,529 INFO [M3-CAD] Ep  29/100 | train=2.4430 (13.2s)
+2026-02-27 18:36:58,881 INFO [M3-CAD] Ep  30/100 | train=2.4331 val=2.2332 rec=1.9929 kl=0.1811 ent=2.864 ngram=0.0887 (12.8s)
+2026-02-27 18:36:59,119 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/best.pt
+2026-02-27 18:36:59,378 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/epoch_30.pt
+2026-02-27 18:37:13,067 INFO [M3-CAD] Ep  31/100 | train=2.4229 (13.7s)
+2026-02-27 18:37:26,610 INFO [M3-CAD] Ep  32/100 | train=2.4158 (13.5s)
+2026-02-27 18:37:40,136 INFO [M3-CAD] Ep  33/100 | train=2.4076 (13.5s)
+2026-02-27 18:37:53,591 INFO [M3-CAD] Ep  34/100 | train=2.3993 (13.5s)
+2026-02-27 18:38:08,741 INFO [M3-CAD] Ep  35/100 | train=2.3886 val=2.1684 rec=1.9110 kl=0.1988 ent=2.869 ngram=0.0899 (13.5s)
+2026-02-27 18:38:08,957 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/best.pt
+2026-02-27 18:38:22,069 INFO [M3-CAD] Ep  36/100 | train=2.3805 (13.1s)
+2026-02-27 18:38:35,544 INFO [M3-CAD] Ep  37/100 | train=2.3743 (13.5s)
+2026-02-27 18:38:48,864 INFO [M3-CAD] Ep  38/100 | train=2.3666 (13.3s)
+2026-02-27 18:39:02,252 INFO [M3-CAD] Ep  39/100 | train=2.3584 (13.4s)
+2026-02-27 18:39:17,171 INFO [M3-CAD] Ep  40/100 | train=2.3517 val=2.1255 rec=1.8557 kl=0.2118 ent=2.877 ngram=0.0842 (13.3s)
+2026-02-27 18:39:17,403 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/best.pt
+2026-02-27 18:39:17,645 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/epoch_40.pt
+2026-02-27 18:39:31,210 INFO [M3-CAD] Ep  41/100 | train=2.3454 (13.6s)
+2026-02-27 18:39:44,613 INFO [M3-CAD] Ep  42/100 | train=2.3378 (13.4s)
+2026-02-27 18:39:58,321 INFO [M3-CAD] Ep  43/100 | train=2.3320 (13.7s)
+2026-02-27 18:40:11,627 INFO [M3-CAD] Ep  44/100 | train=2.3245 (13.3s)
+2026-02-27 18:40:26,476 INFO [M3-CAD] Ep  45/100 | train=2.3190 val=2.0805 rec=1.8004 kl=0.2225 ent=2.883 ngram=0.0909 (13.3s)
+2026-02-27 18:40:26,714 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/best.pt
+2026-02-27 18:40:39,488 INFO [M3-CAD] Ep  46/100 | train=2.3135 (12.8s)
+2026-02-27 18:40:52,685 INFO [M3-CAD] Ep  47/100 | train=2.3075 (13.2s)
+2026-02-27 18:41:06,116 INFO [M3-CAD] Ep  48/100 | train=2.3015 (13.4s)
+2026-02-27 18:41:19,438 INFO [M3-CAD] Ep  49/100 | train=2.2954 (13.3s)
+2026-02-27 18:41:34,291 INFO [M3-CAD] Ep  50/100 | train=2.2906 val=2.0358 rec=1.7431 kl=0.2353 ent=2.876 ngram=0.0879 (13.2s)
+2026-02-27 18:41:34,493 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/best.pt
+2026-02-27 18:41:34,745 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/epoch_50.pt
+2026-02-27 18:41:48,011 INFO [M3-CAD] Ep  51/100 | train=2.2853 (13.3s)
+2026-02-27 18:42:01,332 INFO [M3-CAD] Ep  52/100 | train=2.2806 (13.3s)
+2026-02-27 18:42:14,639 INFO [M3-CAD] Ep  53/100 | train=2.2751 (13.3s)
+2026-02-27 18:42:27,993 INFO [M3-CAD] Ep  54/100 | train=2.2678 (13.4s)
+2026-02-27 18:42:42,923 INFO [M3-CAD] Ep  55/100 | train=2.2627 val=1.9986 rec=1.6982 kl=0.2434 ent=2.871 ngram=0.0847 (13.3s)
+2026-02-27 18:42:43,139 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/best.pt
+2026-02-27 18:42:56,405 INFO [M3-CAD] Ep  56/100 | train=2.2576 (13.3s)
+2026-02-27 18:43:09,620 INFO [M3-CAD] Ep  57/100 | train=2.2526 (13.2s)
+2026-02-27 18:43:22,895 INFO [M3-CAD] Ep  58/100 | train=2.2480 (13.3s)
+2026-02-27 18:43:36,223 INFO [M3-CAD] Ep  59/100 | train=2.2413 (13.3s)
+2026-02-27 18:43:51,091 INFO [M3-CAD] Ep  60/100 | train=2.2377 val=1.9724 rec=1.6624 kl=0.2533 ent=2.876 ngram=0.0836 (13.2s)
+2026-02-27 18:43:51,302 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/best.pt
+2026-02-27 18:43:51,518 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/epoch_60.pt
+2026-02-27 18:44:04,727 INFO [M3-CAD] Ep  61/100 | train=2.2332 (13.2s)
+2026-02-27 18:44:18,050 INFO [M3-CAD] Ep  62/100 | train=2.2293 (13.3s)
+2026-02-27 18:44:31,289 INFO [M3-CAD] Ep  63/100 | train=2.2247 (13.2s)
+2026-02-27 18:44:44,203 INFO [M3-CAD] Ep  64/100 | train=2.2217 (12.9s)
+2026-02-27 18:44:58,778 INFO [M3-CAD] Ep  65/100 | train=2.2181 val=1.9493 rec=1.6340 kl=0.2584 ent=2.875 ngram=0.0939 (13.0s)
+2026-02-27 18:44:59,006 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/best.pt
+2026-02-27 18:45:12,281 INFO [M3-CAD] Ep  66/100 | train=2.2140 (13.3s)
+2026-02-27 18:45:25,668 INFO [M3-CAD] Ep  67/100 | train=2.2097 (13.4s)
+2026-02-27 18:45:38,885 INFO [M3-CAD] Ep  68/100 | train=2.2077 (13.2s)
+2026-02-27 18:45:52,156 INFO [M3-CAD] Ep  69/100 | train=2.2028 (13.3s)
+2026-02-27 18:46:07,080 INFO [M3-CAD] Ep  70/100 | train=2.2021 val=1.9171 rec=1.5953 kl=0.2651 ent=2.874 ngram=0.0832 (13.3s)
+2026-02-27 18:46:07,293 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/best.pt
+2026-02-27 18:46:07,501 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/epoch_70.pt
+2026-02-27 18:46:20,684 INFO [M3-CAD] Ep  71/100 | train=2.2008 (13.2s)
+2026-02-27 18:46:33,857 INFO [M3-CAD] Ep  72/100 | train=2.1969 (13.2s)
+2026-02-27 18:46:47,129 INFO [M3-CAD] Ep  73/100 | train=2.1936 (13.3s)
+2026-02-27 18:47:00,376 INFO [M3-CAD] Ep  74/100 | train=2.1919 (13.2s)
+2026-02-27 18:47:15,226 INFO [M3-CAD] Ep  75/100 | train=2.1870 val=1.9109 rec=1.5820 kl=0.2724 ent=2.873 ngram=0.0844 (13.2s)
+2026-02-27 18:47:15,438 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/best.pt
+2026-02-27 18:47:28,675 INFO [M3-CAD] Ep  76/100 | train=2.1863 (13.2s)
+2026-02-27 18:47:42,326 INFO [M3-CAD] Ep  77/100 | train=2.1829 (13.7s)
+2026-02-27 18:47:55,524 INFO [M3-CAD] Ep  78/100 | train=2.1820 (13.2s)
+2026-02-27 18:48:09,072 INFO [M3-CAD] Ep  79/100 | train=2.1782 (13.5s)
+2026-02-27 18:48:23,871 INFO [M3-CAD] Ep  80/100 | train=2.1772 val=1.8945 rec=1.5627 kl=0.2754 ent=2.873 ngram=0.0860 (13.2s)
+2026-02-27 18:48:24,116 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/best.pt
+2026-02-27 18:48:24,333 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/epoch_80.pt
+2026-02-27 18:48:37,699 INFO [M3-CAD] Ep  81/100 | train=2.1748 (13.4s)
+2026-02-27 18:48:50,788 INFO [M3-CAD] Ep  82/100 | train=2.1715 (13.1s)
+2026-02-27 18:49:02,811 INFO [M3-CAD] Ep  83/100 | train=2.1691 (12.0s)
+2026-02-27 18:49:15,576 INFO [M3-CAD] Ep  84/100 | train=2.1661 (12.8s)
+2026-02-27 18:49:30,265 INFO [M3-CAD] Ep  85/100 | train=2.1663 val=1.8746 rec=1.5377 kl=0.2807 ent=2.881 ngram=0.0870 (13.1s)
+2026-02-27 18:49:30,487 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/best.pt
+2026-02-27 18:49:43,869 INFO [M3-CAD] Ep  86/100 | train=2.1619 (13.4s)
+2026-02-27 18:49:57,193 INFO [M3-CAD] Ep  87/100 | train=2.1588 (13.3s)
+2026-02-27 18:50:10,498 INFO [M3-CAD] Ep  88/100 | train=2.1585 (13.3s)
+2026-02-27 18:50:23,222 INFO [M3-CAD] Ep  89/100 | train=2.1566 (12.7s)
+2026-02-27 18:50:38,095 INFO [M3-CAD] Ep  90/100 | train=2.1543 val=1.8527 rec=1.5114 kl=0.2850 ent=2.881 ngram=0.0829 (13.3s)
+2026-02-27 18:50:38,316 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/best.pt
+2026-02-27 18:50:38,541 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/epoch_90.pt
+2026-02-27 18:50:51,699 INFO [M3-CAD] Ep  91/100 | train=2.1508 (13.2s)
+2026-02-27 18:51:04,897 INFO [M3-CAD] Ep  92/100 | train=2.1481 (13.2s)
+2026-02-27 18:51:18,110 INFO [M3-CAD] Ep  93/100 | train=2.1463 (13.2s)
+2026-02-27 18:51:31,407 INFO [M3-CAD] Ep  94/100 | train=2.1449 (13.3s)
+2026-02-27 18:51:46,192 INFO [M3-CAD] Ep  95/100 | train=2.1424 val=1.8376 rec=1.4920 kl=0.2893 ent=2.874 ngram=0.0823 (13.2s)
+2026-02-27 18:51:46,403 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/best.pt
+2026-02-27 18:51:59,661 INFO [M3-CAD] Ep  96/100 | train=2.1406 (13.3s)
+2026-02-27 18:52:12,825 INFO [M3-CAD] Ep  97/100 | train=2.1355 (13.2s)
+2026-02-27 18:52:26,180 INFO [M3-CAD] Ep  98/100 | train=2.1359 (13.4s)
+2026-02-27 18:52:39,495 INFO [M3-CAD] Ep  99/100 | train=2.1332 (13.3s)
+2026-02-27 18:52:54,478 INFO [M3-CAD] Ep 100/100 | train=2.1317 val=1.8317 rec=1.4798 kl=0.2956 ent=2.896 ngram=0.0848 (13.4s)
+2026-02-27 18:52:54,689 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/best.pt
+2026-02-27 18:52:54,906 INFO [M3-CAD] Checkpoint saved: baselines/checkpoints/m3cad/epoch_100.pt
+2026-02-27 18:52:54,948 INFO [M3-CAD] Training complete.
+
+[train_baseline] Done!

@@ -1,0 +1,198 @@
+nohup: ignoring input
+2026-02-26 18:35:22,568 - __main__ - INFO - Device: cuda
+2026-02-26 18:35:22,586 - __main__ - INFO - GPU: Quadro RTX 6000 (23.5 GB)
+Loaded 129121 sequences from dataset/train.csv
+Available features: ['instability_index', 'therapeutic_score', 'hemolytic_score', 'aliphatic_index', 'hydrophobic_moment', 'gravy', 'charge_at_pH7', 'aromaticity']
+Conditional dataset: 129121 sequences
+  Features: ['instability_index', 'therapeutic_score', 'hemolytic_score', 'aliphatic_index', 'hydrophobic_moment', 'gravy', 'charge_at_pH7', 'aromaticity']
+  Feature dim: 8
+Loaded 27669 sequences from dataset/val.csv
+Available features: ['instability_index', 'therapeutic_score', 'hemolytic_score', 'aliphatic_index', 'hydrophobic_moment', 'gravy', 'charge_at_pH7', 'aromaticity']
+Conditional dataset: 27669 sequences
+  Features: ['instability_index', 'therapeutic_score', 'hemolytic_score', 'aliphatic_index', 'hydrophobic_moment', 'gravy', 'charge_at_pH7', 'aromaticity']
+  Feature dim: 8
+2026-02-26 18:35:29,247 - __main__ - INFO - Train: 129121, Val: 27669
+2026-02-26 18:35:29,247 - __main__ - INFO - Batch size: 8192, Num workers: 8
+2026-02-26 18:35:29,247 - __main__ - INFO - Condition dim: 8
+2026-02-26 18:35:29,277 - __main__ - INFO - Using saved model_config from checkpoint: {'vocab_size': 24, 'embedding_dim': 64, 'hidden_dim': 256, 'latent_dim': 128, 'max_length': 50, 'num_layers': 2, 'dropout': 0.2, 'condition_dim': 8, 'bidirectional': True, 'use_attention': True, 'pad_idx': 0, 'sos_idx': 1, 'eos_idx': 2}
+2026-02-26 18:35:29,277 - __main__ - INFO - Resume model: bidirectional=True, hidden_dim=256, latent_dim=128, num_layers=2, condition_dim=8
+2026-02-26 18:35:29,294 - __main__ - INFO - Generator: 2,392,344 params
+2026-02-26 18:35:29,294 - __main__ - INFO - Discriminator: 285,121 params
+2026-02-26 18:35:29,294 - __main__ - INFO - Total: 2,677,465 params
+2026-02-26 18:35:30,981 - peptidegen.training.trainer - ERROR - Error loading discriminator: Error(s) in loading state_dict for CNNDiscriminator:
+	size mismatch for convs.0.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([64]).
+	size mismatch for convs.0.weight_orig: copying a param with shape torch.Size([256, 64, 3]) from checkpoint, the shape in current model is torch.Size([64, 64, 3]).
+	size mismatch for convs.0.weight_u: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([64]).
+	size mismatch for convs.1.bias: copying a param with shape torch.Size([512]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for convs.1.weight_orig: copying a param with shape torch.Size([512, 64, 5]) from checkpoint, the shape in current model is torch.Size([128, 64, 5]).
+	size mismatch for convs.1.weight_u: copying a param with shape torch.Size([512]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for convs.2.bias: copying a param with shape torch.Size([1024]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for convs.2.weight_orig: copying a param with shape torch.Size([1024, 64, 7]) from checkpoint, the shape in current model is torch.Size([256, 64, 7]).
+	size mismatch for convs.2.weight_u: copying a param with shape torch.Size([1024]) from checkpoint, the shape in current model is torch.Size([256]).
+	size mismatch for feature_layers.0.weight_orig: copying a param with shape torch.Size([256, 1792]) from checkpoint, the shape in current model is torch.Size([256, 448]).
+	size mismatch for feature_layers.0.weight_v: copying a param with shape torch.Size([1792]) from checkpoint, the shape in current model is torch.Size([448]).. Using fresh D weights.
+2026-02-26 18:35:30,981 - peptidegen.training.trainer - INFO - Skipping optimizer/scaler state (--fresh-optimizer): using fresh optimizers and AMP scaler
+2026-02-26 18:35:30,981 - peptidegen.training.trainer - INFO - Loaded model from epoch 76
+2026-02-26 18:35:30,981 - __main__ - INFO - Fresh optimizer mode: optimizer and AMP scaler re-initialized
+2026-02-26 18:35:30,982 - __main__ - INFO - Resumed from epoch 77
+2026-02-26 18:35:30,982 - __main__ - INFO - ============================================================
+2026-02-26 18:35:30,982 - __main__ - INFO - Training for 500 epochs (starting from 77)
+2026-02-26 18:35:30,982 - __main__ - INFO - Batch size: 8192, Accumulation steps: 1
+2026-02-26 18:35:30,982 - __main__ - INFO - Effective batch: 8192
+2026-02-26 18:35:30,982 - __main__ - INFO - Config: g_steps=4, d_steps=1
+2026-02-26 18:35:30,982 - __main__ - INFO - Weights: diversity=0.9, adv=0.7
+2026-02-26 18:35:30,982 - __main__ - INFO - ============================================================
+2026-02-26 18:35:30,982 - peptidegen.training.trainer - INFO - Training on cuda for 500 epochs
+2026-02-26 18:35:30,982 - peptidegen.training.trainer - INFO - G steps: 4, D steps: 1
+2026-02-26 18:35:30,982 - peptidegen.training.trainer - INFO - Gradient accumulation steps: 1
+2026-02-26 18:35:30,983 - peptidegen.training.trainer - INFO - Diversity weight: 0.9, Adversarial weight: 0.7
+2026-02-26 18:35:30,983 - peptidegen.training.trainer - INFO - Early stopping: patience=20, metric=val_g_loss
+2026-02-26 18:35:30,983 - peptidegen.training.trainer - INFO - Epoch 78 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:35:56,037 - peptidegen.training.trainer - INFO - Epoch 78/500 [  25.1s] | D: 1.4478 | G: 0.7278 | d_real: 0.422 | d_fake: 0.336 | gap: +0.086 | ent: 1.817 | ngram: 0.1073 | len_pen: 0.0000 | stab: 0.1205 | Val | D: 1.5315 | G: 0.5514 | gap: +0.422
+2026-02-26 18:35:56,037 - peptidegen.training.trainer - INFO - ⭐ Improved val_g_loss: 0.5514
+2026-02-26 18:35:56,582 - peptidegen.training.trainer - INFO - Saved: checkpoints/best_model.pt
+2026-02-26 18:35:56,582 - peptidegen.training.trainer - INFO - ✓ Saved best model: val_g_loss=0.6535 → 0.5514
+2026-02-26 18:35:56,583 - peptidegen.training.trainer - INFO - Epoch 79 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:36:20,889 - peptidegen.training.trainer - INFO - Epoch 79/500 [  24.3s] | D: 1.6914 | G: 0.5062 | d_real: 1.567 | d_fake: 1.030 | gap: +0.537 | ent: 2.184 | ngram: 0.0618 | len_pen: 0.0000 | stab: 0.0338 | Val | D: 1.6642 | G: 0.4733 | gap: +0.699
+2026-02-26 18:36:20,889 - peptidegen.training.trainer - INFO - ⭐ Improved val_g_loss: 0.4733
+2026-02-26 18:36:21,684 - peptidegen.training.trainer - INFO - Saved: checkpoints/best_model.pt
+2026-02-26 18:36:21,684 - peptidegen.training.trainer - INFO - ✓ Saved best model: val_g_loss=0.5514 → 0.4733
+2026-02-26 18:36:21,685 - peptidegen.training.trainer - INFO - Epoch 80 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:36:46,601 - peptidegen.training.trainer - INFO - Epoch 80/500 [  24.9s] | D: 1.7571 | G: 0.4716 | d_real: 1.703 | d_fake: 1.137 | gap: +0.566 | ent: 2.306 | ngram: 0.0618 | len_pen: 0.0000 | stab: 0.0195 | Val | D: 1.7310 | G: 0.4468 | gap: +0.541
+2026-02-26 18:36:46,601 - peptidegen.training.trainer - INFO - ⭐ Improved val_g_loss: 0.4468
+2026-02-26 18:36:47,144 - peptidegen.training.trainer - INFO - Saved: checkpoints/epoch_80.pt
+2026-02-26 18:36:47,669 - peptidegen.training.trainer - INFO - Saved: checkpoints/best_model.pt
+2026-02-26 18:36:47,669 - peptidegen.training.trainer - INFO - ✓ Saved best model: val_g_loss=0.4733 → 0.4468
+2026-02-26 18:36:47,670 - peptidegen.training.trainer - INFO - Epoch 81 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:37:12,005 - peptidegen.training.trainer - INFO - Epoch 81/500 [  24.3s] | D: 1.7667 | G: 0.4493 | d_real: 1.643 | d_fake: 1.151 | gap: +0.491 | ent: 2.466 | ngram: 0.0557 | len_pen: 0.0000 | stab: 0.0094 | Val | D: 1.7457 | G: 0.4473 | gap: +0.501
+2026-02-26 18:37:12,006 - peptidegen.training.trainer - INFO - No improvement for 1/20 epochs. Best: 0.4468
+2026-02-26 18:37:12,006 - peptidegen.training.trainer - INFO - Epoch 82 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:37:36,669 - peptidegen.training.trainer - INFO - Epoch 82/500 [  24.7s] | D: 1.7557 | G: 0.4524 | d_real: 1.662 | d_fake: 1.135 | gap: +0.527 | ent: 2.488 | ngram: 0.0647 | len_pen: 0.0000 | stab: 0.0172 | Val | D: 1.7410 | G: 0.4436 | gap: +0.564
+2026-02-26 18:37:36,669 - peptidegen.training.trainer - INFO - ⭐ Improved val_g_loss: 0.4436
+2026-02-26 18:37:37,222 - peptidegen.training.trainer - INFO - Saved: checkpoints/best_model.pt
+2026-02-26 18:37:37,222 - peptidegen.training.trainer - INFO - ✓ Saved best model: val_g_loss=0.4468 → 0.4436
+2026-02-26 18:37:37,223 - peptidegen.training.trainer - INFO - Epoch 83 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:38:02,179 - peptidegen.training.trainer - INFO - Epoch 83/500 [  25.0s] | D: 1.7495 | G: 0.4405 | d_real: 1.715 | d_fake: 1.126 | gap: +0.589 | ent: 2.582 | ngram: 0.0541 | len_pen: 0.0000 | stab: 0.0143 | Val | D: 1.6202 | G: 0.4681 | gap: +0.796
+2026-02-26 18:38:02,180 - peptidegen.training.trainer - INFO - No improvement for 1/20 epochs. Best: 0.4436
+2026-02-26 18:38:02,180 - peptidegen.training.trainer - INFO - Epoch 84 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:38:26,823 - peptidegen.training.trainer - INFO - Epoch 84/500 [  24.6s] | D: 1.7401 | G: 0.4483 | d_real: 1.732 | d_fake: 1.111 | gap: +0.621 | ent: 2.591 | ngram: 0.0558 | len_pen: 0.0000 | stab: 0.0347 | Val | D: 1.7254 | G: 0.4447 | gap: +0.615
+2026-02-26 18:38:26,823 - peptidegen.training.trainer - INFO - No improvement for 2/20 epochs. Best: 0.4436
+2026-02-26 18:38:26,824 - peptidegen.training.trainer - INFO - Epoch 85 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:38:51,415 - peptidegen.training.trainer - INFO - Epoch 85/500 [  24.6s] | D: 1.7417 | G: 0.4382 | d_real: 1.737 | d_fake: 1.115 | gap: +0.621 | ent: 2.602 | ngram: 0.0479 | len_pen: 0.0000 | stab: 0.0101 | Val | D: 1.7179 | G: 0.4341 | gap: +0.656
+2026-02-26 18:38:51,416 - peptidegen.training.trainer - INFO - ⭐ Improved val_g_loss: 0.4341
+2026-02-26 18:38:51,944 - peptidegen.training.trainer - INFO - Saved: checkpoints/best_model.pt
+2026-02-26 18:38:51,944 - peptidegen.training.trainer - INFO - ✓ Saved best model: val_g_loss=0.4436 → 0.4341
+2026-02-26 18:38:51,945 - peptidegen.training.trainer - INFO - Epoch 86 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:39:16,692 - peptidegen.training.trainer - INFO - Epoch 86/500 [  24.7s] | D: 1.7398 | G: 0.4324 | d_real: 1.750 | d_fake: 1.112 | gap: +0.638 | ent: 2.658 | ngram: 0.0399 | len_pen: 0.0000 | stab: 0.0071 | Val | D: 1.7148 | G: 0.4277 | gap: +0.655
+2026-02-26 18:39:16,692 - peptidegen.training.trainer - INFO - ⭐ Improved val_g_loss: 0.4277
+2026-02-26 18:39:17,212 - peptidegen.training.trainer - INFO - Saved: checkpoints/best_model.pt
+2026-02-26 18:39:17,213 - peptidegen.training.trainer - INFO - ✓ Saved best model: val_g_loss=0.4341 → 0.4277
+2026-02-26 18:39:17,213 - peptidegen.training.trainer - INFO - Epoch 87 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:39:41,709 - peptidegen.training.trainer - INFO - Epoch 87/500 [  24.5s] | D: 1.7448 | G: 0.4322 | d_real: 1.732 | d_fake: 1.120 | gap: +0.611 | ent: 2.649 | ngram: 0.0406 | len_pen: 0.0000 | stab: 0.0065 | Val | D: 1.7658 | G: 0.4184 | gap: +0.576
+2026-02-26 18:39:41,709 - peptidegen.training.trainer - INFO - ⭐ Improved val_g_loss: 0.4184
+2026-02-26 18:39:42,247 - peptidegen.training.trainer - INFO - Saved: checkpoints/best_model.pt
+2026-02-26 18:39:42,247 - peptidegen.training.trainer - INFO - ✓ Saved best model: val_g_loss=0.4277 → 0.4184
+2026-02-26 18:39:42,248 - peptidegen.training.trainer - INFO - Epoch 88 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:40:07,292 - peptidegen.training.trainer - INFO - Epoch 88/500 [  25.0s] | D: 1.7518 | G: 0.4392 | d_real: 1.718 | d_fake: 1.131 | gap: +0.588 | ent: 2.627 | ngram: 0.0495 | len_pen: 0.0000 | stab: 0.0188 | Val | D: 1.7070 | G: 0.4376 | gap: +0.594
+2026-02-26 18:40:07,293 - peptidegen.training.trainer - INFO - No improvement for 1/20 epochs. Best: 0.4184
+2026-02-26 18:40:07,293 - peptidegen.training.trainer - INFO - Epoch 89 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:40:32,298 - peptidegen.training.trainer - INFO - Epoch 89/500 [  25.0s] | D: 1.7459 | G: 0.4348 | d_real: 1.707 | d_fake: 1.122 | gap: +0.585 | ent: 2.651 | ngram: 0.0411 | len_pen: 0.0000 | stab: 0.0055 | Val | D: 1.7544 | G: 0.4217 | gap: +0.604
+2026-02-26 18:40:32,299 - peptidegen.training.trainer - INFO - No improvement for 2/20 epochs. Best: 0.4184
+2026-02-26 18:40:32,299 - peptidegen.training.trainer - INFO - Epoch 90 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:40:56,926 - peptidegen.training.trainer - INFO - Epoch 90/500 [  24.6s] | D: 1.7495 | G: 0.4363 | d_real: 1.731 | d_fake: 1.128 | gap: +0.604 | ent: 2.654 | ngram: 0.0442 | len_pen: 0.0000 | stab: 0.0188 | Val | D: 1.7391 | G: 0.4201 | gap: +0.589
+2026-02-26 18:40:56,926 - peptidegen.training.trainer - INFO - No improvement for 3/20 epochs. Best: 0.4184
+2026-02-26 18:40:57,687 - peptidegen.training.trainer - INFO - Saved: checkpoints/epoch_90.pt
+2026-02-26 18:40:57,688 - peptidegen.training.trainer - INFO - Epoch 91 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:41:22,131 - peptidegen.training.trainer - INFO - Epoch 91/500 [  24.4s] | D: 1.7484 | G: 0.4279 | d_real: 1.720 | d_fake: 1.126 | gap: +0.594 | ent: 2.716 | ngram: 0.0343 | len_pen: 0.0000 | stab: 0.0085 | Val | D: 1.7589 | G: 0.4144 | gap: +0.573
+2026-02-26 18:41:22,132 - peptidegen.training.trainer - INFO - ⭐ Improved val_g_loss: 0.4144
+2026-02-26 18:41:22,673 - peptidegen.training.trainer - INFO - Saved: checkpoints/best_model.pt
+2026-02-26 18:41:22,673 - peptidegen.training.trainer - INFO - ✓ Saved best model: val_g_loss=0.4184 → 0.4144
+2026-02-26 18:41:22,674 - peptidegen.training.trainer - INFO - Epoch 92 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:41:47,451 - peptidegen.training.trainer - INFO - Epoch 92/500 [  24.8s] | D: 1.7506 | G: 0.4298 | d_real: 1.724 | d_fake: 1.130 | gap: +0.594 | ent: 2.678 | ngram: 0.0369 | len_pen: 0.0000 | stab: 0.0134 | Val | D: 1.7311 | G: 0.4297 | gap: +0.616
+2026-02-26 18:41:47,451 - peptidegen.training.trainer - INFO - No improvement for 1/20 epochs. Best: 0.4144
+2026-02-26 18:41:47,452 - peptidegen.training.trainer - INFO - Epoch 93 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:42:12,272 - peptidegen.training.trainer - INFO - Epoch 93/500 [  24.8s] | D: 1.7512 | G: 0.4256 | d_real: 1.719 | d_fake: 1.131 | gap: +0.588 | ent: 2.689 | ngram: 0.0336 | len_pen: 0.0000 | stab: 0.0102 | Val | D: 1.7605 | G: 0.4101 | gap: +0.567
+2026-02-26 18:42:12,273 - peptidegen.training.trainer - INFO - ⭐ Improved val_g_loss: 0.4101
+2026-02-26 18:42:12,819 - peptidegen.training.trainer - INFO - Saved: checkpoints/best_model.pt
+2026-02-26 18:42:12,820 - peptidegen.training.trainer - INFO - ✓ Saved best model: val_g_loss=0.4144 → 0.4101
+2026-02-26 18:42:12,820 - peptidegen.training.trainer - INFO - Epoch 94 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:42:37,883 - peptidegen.training.trainer - INFO - Epoch 94/500 [  25.1s] | D: 1.7516 | G: 0.4226 | d_real: 1.723 | d_fake: 1.132 | gap: +0.591 | ent: 2.717 | ngram: 0.0316 | len_pen: 0.0000 | stab: 0.0139 | Val | D: 1.7522 | G: 0.4163 | gap: +0.593
+2026-02-26 18:42:37,884 - peptidegen.training.trainer - INFO - No improvement for 1/20 epochs. Best: 0.4101
+2026-02-26 18:42:37,884 - peptidegen.training.trainer - INFO - Epoch 95 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:43:02,597 - peptidegen.training.trainer - INFO - Epoch 95/500 [  24.7s] | D: 1.7517 | G: 0.4183 | d_real: 1.721 | d_fake: 1.132 | gap: +0.589 | ent: 2.763 | ngram: 0.0270 | len_pen: 0.0000 | stab: 0.0052 | Val | D: 1.7425 | G: 0.4139 | gap: +0.596
+2026-02-26 18:43:02,598 - peptidegen.training.trainer - INFO - No improvement for 2/20 epochs. Best: 0.4101
+2026-02-26 18:43:02,598 - peptidegen.training.trainer - INFO - Epoch 96 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:43:27,008 - peptidegen.training.trainer - INFO - Epoch 96/500 [  24.4s] | D: 1.7524 | G: 0.4218 | d_real: 1.718 | d_fake: 1.133 | gap: +0.585 | ent: 2.743 | ngram: 0.0322 | len_pen: 0.0000 | stab: 0.0121 | Val | D: 1.7486 | G: 0.4107 | gap: +0.586
+2026-02-26 18:43:27,009 - peptidegen.training.trainer - INFO - No improvement for 3/20 epochs. Best: 0.4101
+2026-02-26 18:43:27,009 - peptidegen.training.trainer - INFO - Epoch 97 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:43:51,800 - peptidegen.training.trainer - INFO - Epoch 97/500 [  24.8s] | D: 1.7524 | G: 0.4247 | d_real: 1.719 | d_fake: 1.133 | gap: +0.586 | ent: 2.736 | ngram: 0.0336 | len_pen: 0.0000 | stab: 0.0272 | Val | D: 1.7623 | G: 0.4098 | gap: +0.582
+2026-02-26 18:43:51,800 - peptidegen.training.trainer - INFO - ⭐ Improved val_g_loss: 0.4098
+2026-02-26 18:43:52,345 - peptidegen.training.trainer - INFO - Saved: checkpoints/best_model.pt
+2026-02-26 18:43:52,345 - peptidegen.training.trainer - INFO - ✓ Saved best model: val_g_loss=0.4101 → 0.4098
+2026-02-26 18:43:52,346 - peptidegen.training.trainer - INFO - Epoch 98 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:44:17,167 - peptidegen.training.trainer - INFO - Epoch 98/500 [  24.8s] | D: 1.7531 | G: 0.4237 | d_real: 1.719 | d_fake: 1.134 | gap: +0.584 | ent: 2.728 | ngram: 0.0339 | len_pen: 0.0000 | stab: 0.0097 | Val | D: 1.7537 | G: 0.4101 | gap: +0.594
+2026-02-26 18:44:17,167 - peptidegen.training.trainer - INFO - No improvement for 1/20 epochs. Best: 0.4098
+2026-02-26 18:44:17,168 - peptidegen.training.trainer - INFO - Epoch 99 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:44:41,827 - peptidegen.training.trainer - INFO - Epoch 99/500 [  24.7s] | D: 1.7538 | G: 0.4253 | d_real: 1.718 | d_fake: 1.136 | gap: +0.583 | ent: 2.715 | ngram: 0.0346 | len_pen: 0.0000 | stab: 0.0180 | Val | D: 1.7507 | G: 0.4205 | gap: +0.583
+2026-02-26 18:44:41,828 - peptidegen.training.trainer - INFO - No improvement for 2/20 epochs. Best: 0.4098
+2026-02-26 18:44:41,828 - peptidegen.training.trainer - INFO - Epoch 100 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:45:06,563 - peptidegen.training.trainer - INFO - Epoch 100/500 [  24.7s] | D: 1.7563 | G: 0.4192 | d_real: 1.706 | d_fake: 1.139 | gap: +0.567 | ent: 2.749 | ngram: 0.0257 | len_pen: 0.0000 | stab: 0.0107 | Val | D: 1.7595 | G: 0.4100 | gap: +0.561
+2026-02-26 18:45:06,563 - peptidegen.training.trainer - INFO - No improvement for 3/20 epochs. Best: 0.4098
+2026-02-26 18:45:07,085 - peptidegen.training.trainer - INFO - Saved: checkpoints/epoch_100.pt
+2026-02-26 18:45:07,086 - peptidegen.training.trainer - INFO - Epoch 101 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:45:31,790 - peptidegen.training.trainer - INFO - Epoch 101/500 [  24.7s] | D: 1.7573 | G: 0.4208 | d_real: 1.702 | d_fake: 1.140 | gap: +0.561 | ent: 2.726 | ngram: 0.0276 | len_pen: 0.0000 | stab: 0.0052 | Val | D: 1.7492 | G: 0.4176 | gap: +0.571
+2026-02-26 18:45:31,790 - peptidegen.training.trainer - INFO - No improvement for 4/20 epochs. Best: 0.4098
+2026-02-26 18:45:31,790 - peptidegen.training.trainer - INFO - Epoch 102 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:45:56,487 - peptidegen.training.trainer - INFO - Epoch 102/500 [  24.7s] | D: 1.7551 | G: 0.4234 | d_real: 1.703 | d_fake: 1.137 | gap: +0.566 | ent: 2.697 | ngram: 0.0284 | len_pen: 0.0000 | stab: 0.0061 | Val | D: 1.7642 | G: 0.4121 | gap: +0.570
+2026-02-26 18:45:56,487 - peptidegen.training.trainer - INFO - No improvement for 5/20 epochs. Best: 0.4098
+2026-02-26 18:45:56,488 - peptidegen.training.trainer - INFO - Epoch 103 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:46:21,534 - peptidegen.training.trainer - INFO - Epoch 103/500 [  25.0s] | D: 1.7576 | G: 0.4260 | d_real: 1.703 | d_fake: 1.141 | gap: +0.561 | ent: 2.696 | ngram: 0.0289 | len_pen: 0.0000 | stab: 0.0177 | Val | D: 1.7483 | G: 0.4152 | gap: +0.561
+2026-02-26 18:46:21,535 - peptidegen.training.trainer - INFO - No improvement for 6/20 epochs. Best: 0.4098
+2026-02-26 18:46:21,535 - peptidegen.training.trainer - INFO - Epoch 104 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:46:46,326 - peptidegen.training.trainer - INFO - Epoch 104/500 [  24.8s] | D: 1.7550 | G: 0.4244 | d_real: 1.704 | d_fake: 1.137 | gap: +0.567 | ent: 2.721 | ngram: 0.0279 | len_pen: 0.0000 | stab: 0.0128 | Val | D: 1.7484 | G: 0.4196 | gap: +0.584
+2026-02-26 18:46:46,326 - peptidegen.training.trainer - INFO - No improvement for 7/20 epochs. Best: 0.4098
+2026-02-26 18:46:46,326 - peptidegen.training.trainer - INFO - Epoch 105 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:47:11,017 - peptidegen.training.trainer - INFO - Epoch 105/500 [  24.7s] | D: 1.7523 | G: 0.4245 | d_real: 1.717 | d_fake: 1.134 | gap: +0.583 | ent: 2.730 | ngram: 0.0292 | len_pen: 0.0000 | stab: 0.0099 | Val | D: 1.7561 | G: 0.4132 | gap: +0.586
+2026-02-26 18:47:11,017 - peptidegen.training.trainer - INFO - No improvement for 8/20 epochs. Best: 0.4098
+2026-02-26 18:47:11,018 - peptidegen.training.trainer - INFO - Epoch 106 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:47:35,759 - peptidegen.training.trainer - INFO - Epoch 106/500 [  24.7s] | D: 1.7551 | G: 0.4272 | d_real: 1.713 | d_fake: 1.138 | gap: +0.575 | ent: 2.716 | ngram: 0.0304 | len_pen: 0.0000 | stab: 0.0163 | Val | D: 1.7542 | G: 0.4192 | gap: +0.564
+2026-02-26 18:47:35,760 - peptidegen.training.trainer - INFO - No improvement for 9/20 epochs. Best: 0.4098
+2026-02-26 18:47:35,760 - peptidegen.training.trainer - INFO - Epoch 107 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:48:00,469 - peptidegen.training.trainer - INFO - Epoch 107/500 [  24.7s] | D: 1.7538 | G: 0.4304 | d_real: 1.709 | d_fake: 1.136 | gap: +0.573 | ent: 2.677 | ngram: 0.0364 | len_pen: 0.0000 | stab: 0.0106 | Val | D: 1.7624 | G: 0.4235 | gap: +0.572
+2026-02-26 18:48:00,469 - peptidegen.training.trainer - INFO - No improvement for 10/20 epochs. Best: 0.4098
+2026-02-26 18:48:00,470 - peptidegen.training.trainer - INFO - Epoch 108 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:48:25,171 - peptidegen.training.trainer - INFO - Epoch 108/500 [  24.7s] | D: 1.7532 | G: 0.4289 | d_real: 1.716 | d_fake: 1.135 | gap: +0.580 | ent: 2.674 | ngram: 0.0358 | len_pen: 0.0000 | stab: 0.0114 | Val | D: 1.7591 | G: 0.4178 | gap: +0.582
+2026-02-26 18:48:25,171 - peptidegen.training.trainer - INFO - No improvement for 11/20 epochs. Best: 0.4098
+2026-02-26 18:48:25,171 - peptidegen.training.trainer - INFO - Epoch 109 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:48:49,883 - peptidegen.training.trainer - INFO - Epoch 109/500 [  24.7s] | D: 1.7536 | G: 0.4289 | d_real: 1.714 | d_fake: 1.136 | gap: +0.579 | ent: 2.665 | ngram: 0.0348 | len_pen: 0.0000 | stab: 0.0128 | Val | D: 1.7568 | G: 0.4213 | gap: +0.587
+2026-02-26 18:48:49,884 - peptidegen.training.trainer - INFO - No improvement for 12/20 epochs. Best: 0.4098
+2026-02-26 18:48:49,884 - peptidegen.training.trainer - INFO - Epoch 110 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:49:15,196 - peptidegen.training.trainer - INFO - Epoch 110/500 [  25.3s] | D: 1.7564 | G: 0.4281 | d_real: 1.709 | d_fake: 1.140 | gap: +0.569 | ent: 2.671 | ngram: 0.0329 | len_pen: 0.0000 | stab: 0.0120 | Val | D: 1.7522 | G: 0.4184 | gap: +0.554
+2026-02-26 18:49:15,197 - peptidegen.training.trainer - INFO - No improvement for 13/20 epochs. Best: 0.4098
+2026-02-26 18:49:15,733 - peptidegen.training.trainer - INFO - Saved: checkpoints/epoch_110.pt
+2026-02-26 18:49:15,733 - peptidegen.training.trainer - INFO - Epoch 111 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:49:40,795 - peptidegen.training.trainer - INFO - Epoch 111/500 [  25.1s] | D: 1.7554 | G: 0.4256 | d_real: 1.701 | d_fake: 1.138 | gap: +0.562 | ent: 2.688 | ngram: 0.0301 | len_pen: 0.0000 | stab: 0.0110 | Val | D: 1.7600 | G: 0.4164 | gap: +0.575
+2026-02-26 18:49:40,795 - peptidegen.training.trainer - INFO - No improvement for 14/20 epochs. Best: 0.4098
+2026-02-26 18:49:40,796 - peptidegen.training.trainer - INFO - Epoch 112 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:50:05,382 - peptidegen.training.trainer - INFO - Epoch 112/500 [  24.6s] | D: 1.7533 | G: 0.4227 | d_real: 1.717 | d_fake: 1.135 | gap: +0.581 | ent: 2.737 | ngram: 0.0288 | len_pen: 0.0000 | stab: 0.0078 | Val | D: 1.7503 | G: 0.4172 | gap: +0.587
+2026-02-26 18:50:05,382 - peptidegen.training.trainer - INFO - No improvement for 15/20 epochs. Best: 0.4098
+2026-02-26 18:50:05,383 - peptidegen.training.trainer - INFO - Epoch 113 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:50:30,036 - peptidegen.training.trainer - INFO - Epoch 113/500 [  24.7s] | D: 1.7530 | G: 0.4231 | d_real: 1.717 | d_fake: 1.135 | gap: +0.582 | ent: 2.734 | ngram: 0.0268 | len_pen: 0.0000 | stab: 0.0194 | Val | D: 1.7580 | G: 0.4130 | gap: +0.583
+2026-02-26 18:50:30,036 - peptidegen.training.trainer - INFO - No improvement for 16/20 epochs. Best: 0.4098
+2026-02-26 18:50:30,037 - peptidegen.training.trainer - INFO - Epoch 114 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:50:55,055 - peptidegen.training.trainer - INFO - Epoch 114/500 [  25.0s] | D: 1.7517 | G: 0.4198 | d_real: 1.725 | d_fake: 1.133 | gap: +0.592 | ent: 2.747 | ngram: 0.0225 | len_pen: 0.0000 | stab: 0.0069 | Val | D: 1.7472 | G: 0.4180 | gap: +0.593
+2026-02-26 18:50:55,055 - peptidegen.training.trainer - INFO - No improvement for 17/20 epochs. Best: 0.4098
+2026-02-26 18:50:55,056 - peptidegen.training.trainer - INFO - Epoch 115 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:51:19,741 - peptidegen.training.trainer - INFO - Epoch 115/500 [  24.7s] | D: 1.7523 | G: 0.4232 | d_real: 1.720 | d_fake: 1.134 | gap: +0.586 | ent: 2.732 | ngram: 0.0262 | len_pen: 0.0000 | stab: 0.0150 | Val | D: 1.7503 | G: 0.4124 | gap: +0.584
+2026-02-26 18:51:19,741 - peptidegen.training.trainer - INFO - No improvement for 18/20 epochs. Best: 0.4098
+2026-02-26 18:51:19,741 - peptidegen.training.trainer - INFO - Epoch 116 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:51:44,634 - peptidegen.training.trainer - INFO - Epoch 116/500 [  24.9s] | D: 1.7516 | G: 0.4220 | d_real: 1.722 | d_fake: 1.133 | gap: +0.589 | ent: 2.739 | ngram: 0.0247 | len_pen: 0.0000 | stab: 0.0138 | Val | D: 1.7573 | G: 0.4114 | gap: +0.589
+2026-02-26 18:51:44,635 - peptidegen.training.trainer - INFO - No improvement for 19/20 epochs. Best: 0.4098
+2026-02-26 18:51:44,635 - peptidegen.training.trainer - INFO - Epoch 117 Training with 15 batches (accum_steps=1)...
+2026-02-26 18:52:09,916 - peptidegen.training.trainer - INFO - Epoch 117/500 [  25.3s] | D: 1.7519 | G: 0.4227 | d_real: 1.722 | d_fake: 1.134 | gap: +0.588 | ent: 2.746 | ngram: 0.0265 | len_pen: 0.0000 | stab: 0.0148 | Val | D: 1.7475 | G: 0.4188 | gap: +0.588
+2026-02-26 18:52:09,917 - peptidegen.training.trainer - INFO - Early stopping triggered at epoch 117
+2026-02-26 18:52:10,463 - peptidegen.training.trainer - INFO - Saved: checkpoints/final_model.pt
+2026-02-26 18:52:10,504 - peptidegen.training.trainer - INFO - Saved history to checkpoints/history.json
+2026-02-26 18:52:10,504 - peptidegen.training.trainer - INFO - Training complete!
+2026-02-26 18:52:10,505 - __main__ - INFO - Peak GPU memory: 9.95 GB
+2026-02-26 18:52:10,505 - __main__ - INFO - Training complete!

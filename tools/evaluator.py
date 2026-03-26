@@ -122,14 +122,27 @@ def run_report(args):
     logger.info(f"Loaded {len(sequences)} sequences")
 
     # Core Analysis
+    logger.info("Running core analysis...")
+    
+    # Sample for slow metrics if dataset is huge
+    MAX_STABILITY_SAMPLE = 10000
+    if len(sequences) > MAX_STABILITY_SAMPLE:
+        logger.info(f"Sampling {MAX_STABILITY_SAMPLE} sequences for stability/AMP analysis due to large input size.")
+        indices = np.random.choice(len(sequences), MAX_STABILITY_SAMPLE, replace=False)
+        sample_seqs = [sequences[i] for i in indices]
+    else:
+        sample_seqs = sequences
+
     analyzer = PeptideStabilityAnalyzer(stability_threshold=args.threshold)
-    stability = analyzer.analyze_batch(sequences)
+    stability = analyzer.analyze_batch(sample_seqs)
+    
+    # Diversity and AA distribution are fast, run on full set
     diversity = calculate_diversity_metrics(sequences)
     aa_dist = calculate_amino_acid_distribution(sequences)
     mode_collapse = detect_mode_collapse(sequences)
     
     try:
-        amp_props = analyze_amp_properties(sequences)
+        amp_props = analyze_amp_properties(sample_seqs)
     except Exception as e:
         logger.warning(f"AMP property analysis failed: {e}")
         amp_props = {}

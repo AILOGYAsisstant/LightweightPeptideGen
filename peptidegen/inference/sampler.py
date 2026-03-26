@@ -128,28 +128,36 @@ class PeptideSampler:
             List of peptide sequences
         """
         sequences = []
+        max_total_attempts = n * 5  # Prevent infinite loop if generation is very poor
+        total_generated = 0
         
-        for start_idx in range(0, n, batch_size):
-            end_idx = min(start_idx + batch_size, n)
-            curr_batch = end_idx - start_idx
+        while len(sequences) < n and total_generated < max_total_attempts:
+            curr_batch = min(batch_size, n - len(sequences))
+            # If we are close, still generate at least a small batch for efficiency
+            curr_batch = max(curr_batch, min(batch_size, 32))
             
             # Get conditions for this batch
             conds = None
             if conditions is not None:
-                conds = conditions[start_idx:end_idx].to(self.device)
+                # Sample conditions with replacement if we run out
+                idx = torch.randint(0, len(conditions), (curr_batch,))
+                conds = conditions[idx].to(self.device)
                 
             # Generate
             batch_seqs = self._generate_batch(
                 curr_batch, conds, temperature, top_k, top_p, max_length
             )
+            total_generated += curr_batch
             
             # Filter by length
             for seq in batch_seqs:
                 if min_length <= len(seq) <= max_length:
                     sequences.append(seq)
-                    
-        logger.info(f"Generated {len(sequences)}/{n} valid sequences")
-        return sequences
+                    if len(sequences) >= n:
+                        break
+                        
+        logger.info(f"Generated {len(sequences)}/{n} valid sequences (total attempted: {total_generated})")
+        return sequences[:n]
         
     def _generate_batch(
         self,
